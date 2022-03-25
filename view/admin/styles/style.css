@@ -1,5 +1,71 @@
+body{
+    background-color: #FBFEF9;
+    color: #222222;
+}
+
+/* Colors
+#133C55- indigo dye
+#386FA4 - queen blue
+#59A5D8 - Carolina Blue
+#FBFEF9 - BABY POWDER
+#A63446 - BIG DIP ORUBY
+*/
+
+
+/* Nav bar Design */
+.navbar-light{
+
+}
+
+
+/* Register Design  */
 .cardContainer{
-    margin-top: 30px;
-    background-color: pink;
-    color:green;
+    margin:auto;
+    /* background-color: pink; */
+    width: 650px;
+    height: auto;
+    padding: 20px;
+}
+
+.form-control :focus {
+    border-color: #A63446;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(166, 52, 70, 0.5);
+}
+
+.form-control :active {
+    border-color: #A63446;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(166, 52, 70, 0.5);
+}
+
+#passwordHelpInline {
+    font-size: 11px;
+}
+
+#passwordIcon:hover {
+    cursor: pointer;
+}
+
+.btn-primary {
+    padding-top:5px;
+    background-color: #A63446;
+    color: #FBFEF9;
+    border: none;
+}
+
+.btn-primary :hover {
+    color: #A63446;
+    background-color: #FBFEF9;
+    border: none;
+}
+
+.btn-primary :focus {
+    color: #A63446;
+    background-color: #FBFEF9;
+    border: none;
+}
+
+.btn-primary :active {
+    color: #A63446;
+    background-color: #FBFEF9;
+    border: none;
 }

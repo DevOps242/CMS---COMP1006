@@ -1,1 +1,1 @@
-ErrorDocument 404 http://localhost/phptunes/404.php
+ErrorDocument 404 http://localhost:8888/Assignments/CMS-Assignment2/view/404.php
