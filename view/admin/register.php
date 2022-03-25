@@ -6,7 +6,7 @@ require 'includes/header.php';
 ?>
 
 <div class="container text-center mb-3 mt-3" > 
-    <h3>Register for your Admin Portal</h3>
+    <h3 id="pageHeader">Register for your Admin Portal</h3>
     
     <div class="cardContainer" > 
         <div class="card">
@@ -39,7 +39,7 @@ require 'includes/header.php';
                             <span id="passwordHelpInline" class="form-text text-danger">Passwords must be a min of 8 characters, including 1 digit, 1 upper-case and 1 lower-case letter.</span>  
                         </div>
                         <div class="col-auto">
-                            <i class="fa-solid fa-eye-slash" id="passwordIcon" onclick="showHidePassword()"></i>
+                            <i class="fa-solid fa-eye" id="passwordIcon" onclick="showHidePassword()"></i>
                         </div>
                     </div>
                     

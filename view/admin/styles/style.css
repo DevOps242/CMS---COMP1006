@@ -14,27 +14,28 @@ body{
 
 /* Nav bar Design */
 .navbar-light{
-
+    background-color: #386FA4;
+    color: #FBFEF9;
 }
 
 
 /* Register Design  */
+#pageHeader{
+    margin-bottom: 50px;
+}
+
 .cardContainer{
     margin:auto;
     /* background-color: pink; */
     width: 650px;
     height: auto;
     padding: 20px;
+    box-shadow: 0px 1px 1px rgba(19, 60, 85, 0.075) inset, 0px 0px 8px rgba(56, 111, 164, 0.5);
 }
 
-.form-control :focus {
-    border-color: #A63446;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(166, 52, 70, 0.5);
-}
-
-.form-control :active {
-    border-color: #A63446;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(166, 52, 70, 0.5);
+.form-control:focus {
+    border-color: #386FA4;
+    box-shadow: 0px 1px 1px rgba(19, 60, 85, 0.075) inset, 0px 0px 8px rgba(56, 111, 164, 0.5);
 }
 
 #passwordHelpInline {
@@ -47,25 +48,25 @@ body{
 
 .btn-primary {
     padding-top:5px;
-    background-color: #A63446;
+    background-color: #133C55;
     color: #FBFEF9;
     border: none;
 }
 
-.btn-primary :hover {
-    color: #A63446;
+.btn-primary:hover {
+    color: #133C55;
     background-color: #FBFEF9;
-    border: none;
+    border: 2px solid #133C55;
 }
 
-.btn-primary :focus {
-    color: #A63446;
+.btn-primary:focus {
+    color: #133C55;
     background-color: #FBFEF9;
-    border: none;
+    border: 2px solid #133C55;
 }
 
-.btn-primary :active {
-    color: #A63446;
+.btn-primary:active {
+    color: #133C55;
     background-color: #FBFEF9;
-    border: none;
+    border: 2px solid #133C55;
 }
