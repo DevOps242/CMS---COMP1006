@@ -3,3 +3,60 @@ Logs Begin Here:
 Registration Error: "SQLSTATE[HY093]: Invalid parameter number: parameter was not defined"
 TimeStamp: Monday 28th of March 2022 12:04:33 AM
 
+Login Email does not exsist:"apalmer2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:15:03 PM
+
+Login Invalid Credentials:"apalmer2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:15:03 PM
+
+Login Email does not exsist:"apalmer2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:15:41 PM
+
+Login Invalid Credentials:"apalmer2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:15:41 PM
+
+Login Invalid Credentials:"apalmer2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:20:58 PM
+
+Login Email does not exsist:"apalmer24@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:06 PM
+
+Login Invalid Credentials:"apalmer24@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:06 PM
+
+Login Email does not exsist:"apalmer2adfas@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:22 PM
+
+Login Invalid Credentials:"apalmer2adfas@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:22 PM
+
+Login Email does not exsist:"apalmer25454@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:32 PM
+
+Login Invalid Credentials:"apalmer25454@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:32 PM
+
+Login Email does not exsist:"apalmer2444@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:44 PM
+
+Login Invalid Credentials:"apalmer2444@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:21:44 PM
+
+Login Email does not exsist:"apalme11121r2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:22:33 PM
+
+Login Invalid Credentials:"apalme11121r2@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:22:33 PM
+
+Login Email does not exsist:"apalmer32@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:23:00 PM
+
+Login Invalid Credentials:"apalmer32@lakeheadu.ca"
+TimeStamp: Monday 28th of March 2022 07:23:00 PM
+
+Admin Users Display Error:{"errorInfo":["HY093",0]}
+TimeStamp: Monday 28th of March 2022 07:24:32 PM
+
+Admin Users Display Error:{"errorInfo":["HY093",0]}
+TimeStamp: Monday 28th of March 2022 07:24:33 PM
+
