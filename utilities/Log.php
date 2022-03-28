@@ -1,5 +1,5 @@
 <?php 
-require 'shared.php';
+// require 'shared.php';
 
 class Log {
 
@@ -7,23 +7,32 @@ class Log {
 //    {
 //         $this->checkLogFiles();
 //    }
-   
+
+
     public static function error($message) {
-        $logPath = '../../storage/logs/';
-        $fileName = 'cli-server-' .date('j F, Y') .'.log';
+        date_default_timezone_set('US/Eastern');
+        $logPath = '../storage/logs/';
+        $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
         
         // Build the log message 
         date_default_timezone_set('US/Eastern');
         $message = $message  . PHP_EOL . 'TimeStamp: ' . date("l jS \of F Y h:i:s A") . PHP_EOL;
-
+     
         try {
-            if (file_exists($fileName) && strpos($fileName, date('j F, Y')) ) {
+            if (file_exists($fileName) && strpos($fileName, date('j-F-Y')) ) {
+                $file = fopen($fileName, 'a+');
+                // Append the message if not already done.
+                fwrite($file, $message . PHP_EOL);
+                fclose($file);
+            } else {
+                Log::checkLogFiles();
                 $file = fopen($fileName, 'a+');
                 // Append the message if not already done.
                 fwrite($file, $message . PHP_EOL);
                 fclose($file);
             }
+            
         } catch (Exception $error){
             throw new Exception($error->message);
         }
@@ -38,26 +47,31 @@ class Log {
         
         // Creats a .log file if not already created for the date. 
 
-
-        
     }
-
+// && strpos($fileName, date('j-F-Y'))
     public static function log($message) {
-        $logPath = '../../storage/logs/';
-        $fileName = 'cli-server-' .date('j F, Y') .'.log';
-        $fileName = $logPath . $fileName;
-        
-        // Build the log message 
         date_default_timezone_set('US/Eastern');
+        $logPath = '../storage/logs/';
+        $fileName = 'cli-server-' .date('j-F-Y') .'.log';
+        $fileName = $logPath . $fileName;
+    
+        // Build the log message     
         $message = $message  . PHP_EOL . 'TimeStamp: ' . date("l jS \of F Y h:i:s A") . PHP_EOL;
-
+        
         try {
-            if (file_exists($fileName) && strpos($fileName, date('j F, Y')) ) {
+            if (file_exists($fileName) && strpos($fileName, date('j-F-Y')) ) {
+                $file = fopen($fileName, 'a+');
+                // Append the message if not already done.
+                fwrite($file, $message . PHP_EOL);
+                fclose($file);
+            } else {
+                Log::checkLogFiles();
                 $file = fopen($fileName, 'a+');
                 // Append the message if not already done.
                 fwrite($file, $message . PHP_EOL);
                 fclose($file);
             }
+            
         } catch (Exception $error){
             throw new Exception($error->message);
         }
@@ -65,8 +79,9 @@ class Log {
 
     // Creates the log file if not already created.
     private static function generateLogFileDaily(){
-        $logPath = '../../storage/logs/';
-        $fileName = 'cli-server-' .date('j F, Y') .'.log';
+        date_default_timezone_set('US/Eastern');
+        $logPath = '../storage/logs/';
+        $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
 
         $file = fopen($fileName, 'x+');
@@ -75,14 +90,15 @@ class Log {
             die('Error creating the file ' . $fileName );
         }
         
-        fwrite($file, 'cli-server-' . date('j F, Y') .PHP_EOL . 'Logs Begin Here:' . PHP_EOL);
+        fwrite($file, 'cli-server-' . date('j-F-Y') .PHP_EOL . 'Logs Begin Here:' . PHP_EOL);
         fclose($file);
     }
 
     // Checks to see if the log files for today is created.
     private static function checkLogFiles() {
-        $logPath = '../../storage/logs/';
-        $fileName = 'cli-server-' .date('j F, Y') .'.log';
+        date_default_timezone_set('US/Eastern');
+        $logPath = '../storage/logs/';
+        $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
 
         if ( !file_exists($fileName) ) {
