@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -26,12 +28,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
+            <?php 
+                if (isset($_SESSION['createdOn']) === true ) {
+                    echo ' 
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="users.php">Users</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="pages.php" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,7 +44,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <!-- Get pages from the database -->
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="pages.php">Action</a></li>
                             <!-- Template above -->
                             
                             <li>
@@ -52,12 +57,10 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
                     </li>
                 </ul>
-               <?php 
-                if (isset($_SESSION['createdOn']) === true ) {
-                    echo ' 
+              
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-flex" style="--bs-scroll-height: 100px;">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../../controller/logoutHandler.php">Logout</a>
+                                <a class="nav-link active" aria-current="page" href="../../controller/auth/logoutHandler.php">Logout</a>
                             </li>
                         </ul> ';
                 }  else {
@@ -72,8 +75,6 @@
                         </ul>';
                 }
                 ?>
-                
-
             </div>
         </div>
     </nav>
