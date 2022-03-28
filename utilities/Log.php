@@ -8,10 +8,9 @@ class Log {
 //         $this->checkLogFiles();
 //    }
 
-
     public static function error($message) {
         date_default_timezone_set('US/Eastern');
-        $logPath = '../storage/logs/';
+        $logPath = __DIR__ .'/../storage/logs/';
         $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
         
@@ -49,9 +48,9 @@ class Log {
 
     }
 // && strpos($fileName, date('j-F-Y'))
-    public static function log($message) {
+    public static function info($message) {
         date_default_timezone_set('US/Eastern');
-        $logPath = '../storage/logs/';
+        $logPath = __DIR__ .'/../storage/logs/';
         $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
     
@@ -80,24 +79,28 @@ class Log {
     // Creates the log file if not already created.
     private static function generateLogFileDaily(){
         date_default_timezone_set('US/Eastern');
-        $logPath = '../storage/logs/';
+        $logPath = __DIR__ .'/../storage/logs/';
         $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
+        try {
+            $file = fopen($fileName, 'x+');
 
-        $file = fopen($fileName, 'x+');
-
-        if (!$file) {
-            die('Error creating the file ' . $fileName );
+            if (!$file) {
+                die('Error creating the file ' . $fileName );
+            }
+            
+            fwrite($file, 'cli-server-' . date('j-F-Y') .PHP_EOL . 'Logs Begin Here:' . PHP_EOL);
+            fclose($file);
+        } catch (Exception $error) {
+            Log::error('Log File failed to create: '. json_encode($error->getMessage()));
         }
         
-        fwrite($file, 'cli-server-' . date('j-F-Y') .PHP_EOL . 'Logs Begin Here:' . PHP_EOL);
-        fclose($file);
     }
 
     // Checks to see if the log files for today is created.
     private static function checkLogFiles() {
         date_default_timezone_set('US/Eastern');
-        $logPath = '../storage/logs/';
+        $logPath = __DIR__ .'/../storage/logs/';
         $fileName = 'cli-server-' .date('j-F-Y') .'.log';
         $fileName = $logPath . $fileName;
 
