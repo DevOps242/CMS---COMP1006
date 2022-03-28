@@ -1,6 +1,6 @@
 <?php 
-include_once '../utilities/shared.php';
-include_once '../utilities/Log.php';
+require_once __DIR__. '/../utilities/shared.php';
+require_once __DIR__. '/../utilities/Log.php';
 
 class Database {
 
