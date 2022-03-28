@@ -1,11 +1,11 @@
 <?php 
-$pageTitle = 'Register';
+$pageTitle = 'Edit Users';
 require 'includes/header.php';
 
 ?>
 
 <div class="container text-center mb-3 mt-3" > 
-    <h3 id="pageHeader">Register for your Admin Portal</h3>
+    <h3 id="pageHeader">Edit Admin Users for your Portal</h3>
     
     <div class="cardContainer" > 
         <div class="card">

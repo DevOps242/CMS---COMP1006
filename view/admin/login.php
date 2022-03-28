@@ -15,7 +15,7 @@ require 'includes/header.php';
                         echo '<p class="text-danger mt-3"> <b>'. $_GET['message'] .'</b></p>';
                     } 
                 ?>
-                <form method="POST" action="../../controller/loginHandler.php">
+                <form method="POST" action="<?php dirname(__FILE__)?>../../controller/auth/loginHandler.php">
                     <div class="mb-3 mt-3">
                         <input type="text" class="form-control" placeholder="example@example.com" name="email" aria-label="Last name" required>
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
