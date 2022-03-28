@@ -18,7 +18,6 @@ body{
     color: #FBFEF9;
 }
 
-
 /* Register Design  */
 #pageHeader{
     margin-bottom: 50px;
@@ -44,6 +43,10 @@ body{
 
 #passwordIcon:hover {
     cursor: pointer;
+}
+
+.text-info {
+    color: #386FA4;
 }
 
 .btn-primary {

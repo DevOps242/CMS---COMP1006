@@ -2,54 +2,46 @@
 $pageTitle = 'Login';
 require 'includes/header.php';
 
-
-
-session_start();
-session_destroy();
-
-if ( isset($_SESSION['createdOn']) ) {
-    header('Location: /index.php');
-} 
-?> 
+?>
 
 <div class="container text-center mb-3 mt-3" > 
-    <h3>Login to your Admin Portal</h3>
+    <h3 id="pageHeader">Login to your Admin Portal</h3>
     
-    <div class="cardContainer"> 
+    <div class="cardContainer" > 
         <div class="card">
             <div class="container">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="inputPassword6" class="col-form-label">Password</label>
+                <?php 
+                    if(isset($_GET['message'])) {
+                        echo '<p class="text-danger mt-3"> <b>'. $_GET['message'] .'</b></p>';
+                    } 
+                ?>
+                <form method="POST" action="../../controller/loginHandler.php">
+                    <div class="mb-3 mt-3">
+                        <input type="text" class="form-control" placeholder="example@example.com" name="email" aria-label="Last name" required>
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
-                    <div class="col-auto">
-                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="password" id="password" class="form-control" placeholder="Password" name="password" aria-describedby="passwordHelpInline" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <span id="passwordHelpInline" class="form-text">
-                        Must be 8-20 characters long.
-                        </span>
+                    <div class="row g-3 align-items-center mb-2">
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text text-info">Show Password:</span>  
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-eye" id="passwordIcon" onclick="showHidePassword()"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                    <button type="submit" class="btn btn-primary mb-3">Login</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+<?php 
+require 'includes/footer.php';
 
-
-<?php require 'includes/footer.php';?>
-
-<!-- http://localhost:8888/Assignments/CMS-Assignment2/view/admin/login.php -->
+?>

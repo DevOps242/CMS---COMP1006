@@ -11,7 +11,17 @@ require 'includes/header.php';
     <div class="cardContainer" > 
         <div class="card">
             <div class="container">
-                <form method="POST">
+                <?php 
+                    if(isset($_GET['message'])) {
+                       if($_GET['message'] !== 'Users created successfully') {
+                            echo '<p class="text-danger mt-3"> <b>'. $_GET['message'] .'</b></p>';
+                        } else {
+                            echo '<p class="text-success mt-3"> <b>'. $_GET['message'] .'</b></p>';
+                        }
+                    } 
+                ?>
+                
+                <form method="POST" action="../../controller/registerHandler.php">
                     <div class="row g-3 mt-3 mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="John" name="firstName" aria-label="First name" required>
@@ -43,7 +53,7 @@ require 'includes/header.php';
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary mb-3" id="registerBtn" >Login</button>
+                    <button type="submit" class="btn btn-primary mb-3" id="registerBtn" >Register</button>
                 </form>
             </div>
         </div>
