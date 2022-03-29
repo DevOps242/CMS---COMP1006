@@ -25,16 +25,28 @@ if ( empty($email) || empty($password) ) {                                      
         //Check result if it contains the same as email.
         if ( empty($result['userEmail']) ) {
             $serverMessage = "Email address does not exsist";
-            Log::info('Login Email does not exsist:' . json_encode($email));
+            Log::info('Login Admin Process:' . json_encode($$email . PHP_EOL . $serverMessage));
+            $db = null;
             header('Location: ../../view/admin/login.php?message=' . $serverMessage);
-            exit();
+            exit;
         }
 
+        // Verify the password
         if (!password_verify($password, $result['userPassword']) ){
             $serverMessage = "Invalid credentials or email address";
-            Log::info('Login Invalid Credentials:' . json_encode($email));
+            Log::info('Login Admin Process:' . json_encode($$email . PHP_EOL . $serverMessage));
+            $db = null;
             header('Location: ../../view/admin/login.php?message=' . $serverMessage);
-            exit();
+            exit;
+        } 
+
+        // Check to make sure the user account is active.
+        if ($result['userStatus'] === 'inactive') {
+            $serverMessage = "User status is disabled.";
+            Log::info('Login Admin Process:' . json_encode($email . PHP_EOL . $serverMessage));
+            $db = null;
+            header('Location: ../../view/admin/login.php?message=' . $serverMessage);
+            exit;
         }
 
         session_start();
@@ -43,14 +55,16 @@ if ( empty($email) || empty($password) ) {                                      
         $_SESSION['userGUID'] = $result['userGUID'];
         $_SESSION['userID'] = $result['userID'];
         
+        $db = null;
         header('Location: ../../view/admin/index.php');
-        exit();
+        exit;
         
     } catch(Exception $error) {
-        Log::error('Login Error: ' . json_encode($error->getMessage()) );
-    } finally {
+        Log::error('Login Admin Process: ' . json_encode($error->getMessage()) );
+        $serverMessage = "Server Error trying to execute your access";
         $db = null;
+        header('Location: ../../view/admin/login.php?message=' . $serverMessage);
+        exit;
     }
-
 }                  
 
