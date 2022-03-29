@@ -31,7 +31,7 @@ require 'includes/header.php';
                     </div>
                     <div class="mb-3 mt-3">
                         
-                        <input type="text" class="form-control" placeholder="example@example.com" name="email" aria-label="Last name" required>
+                        <input type="email" class="form-control" placeholder="example@example.com" name="email" aria-label="email" required>
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div class="row g-3">

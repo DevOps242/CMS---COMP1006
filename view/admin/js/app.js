@@ -38,3 +38,24 @@ function showHidePassword() {
         passwordIcon.className = 'fa-solid fa-eye';
     }
 }
+
+function toggleActiveStatus() {
+    let toggle = document.getElementById("flexSwitchCheckChecked");
+    let userStatus  = document.getElementById("userStatus");
+    let userStatusValue = document.getElementById("flexSwitchCheckChecked");
+    let checkBoxValue = document.getElementById("checkBoxStatus");
+
+    if (!toggle.checked) {
+        userStatus.innerHTML = "Inactive"
+        userStatus.className= "form-check-label text-danger"
+        checkBoxValue.value = "inactive";
+        userStatusValue.checked = false;
+    } else {
+        userStatus.innerHTML = "Active"
+        userStatus.className= "form-check-label text-success"
+        checkBoxValue.value = "active";
+        userStatusValue.checked = true;
+
+    }
+    console.log(checkBoxValue.value);
+}
