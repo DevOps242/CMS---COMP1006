@@ -27,12 +27,14 @@ if ( empty($email) || empty($password) ) {                                      
             $serverMessage = "Email address does not exsist";
             Log::info('Login Email does not exsist:' . json_encode($email));
             header('Location: ../../view/admin/login.php?message=' . $serverMessage);
+            exit();
         }
 
         if (!password_verify($password, $result['userPassword']) ){
             $serverMessage = "Invalid credentials or email address";
             Log::info('Login Invalid Credentials:' . json_encode($email));
             header('Location: ../../view/admin/login.php?message=' . $serverMessage);
+            exit();
         }
 
         session_start();
@@ -42,6 +44,7 @@ if ( empty($email) || empty($password) ) {                                      
         $_SESSION['userID'] = $result['userID'];
         
         header('Location: ../../view/admin/index.php');
+        exit();
         
     } catch(Exception $error) {
         Log::error('Login Error: ' . json_encode($error->getMessage()) );

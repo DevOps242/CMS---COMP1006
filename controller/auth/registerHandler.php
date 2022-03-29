@@ -19,7 +19,7 @@ if (empty($firstName) || empty($lastName)) {
     $serverMessage = "Error, all fields must be filled";
     $flag = true;
 
-} elseif (is_numeric($firstName) || is_numeric($lastName)) {
+} elseif (preg_match('~[0-9]+~', $firstName) || preg_match('~[0-9]+~', $lastName)) {
     $errorCode = 1;
     $serverMessage = "Error, Name fields should not contain numbers";
     $flag = true;
@@ -97,10 +97,12 @@ if ($flag === false) {
         $db = null;
         // Redirect back to the page.
         header('Location: ../../view/admin/register.php?message=' . $serverMessage);
+        exit;
     } catch (Exception $error) {
         Log::error('Registration Error: ' . json_encode($error->getMessage()));
     }
 } else {
     //  Redirect back to the register page with the error.
     header('Location: ../../view/admin/register.php?message=' . $serverMessage);
+    exit;
 }
