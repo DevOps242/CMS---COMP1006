@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logo</a>
+                        <a class="nav-link" href="logo.php">Logo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../public/index.php">View Public Pages</a>

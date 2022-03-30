@@ -49,7 +49,7 @@ if ( !isset($_SESSION['createdOn']) ) {
                         $results = $cmd->fetchAll();
                         
                         if(count($results) === 0 ) {
-                            echo '<p class="text-danger">There are currently any pages to display, create pages here: <a href="create-pages.php">Create Pages</a>';
+                            echo '<p class="text-danger">There are currently any pages to display, create pages here: <a href="page-create.php">Create Pages</a>';
                         } else {
                             foreach($results as $page) {
                                 echo '<tr>

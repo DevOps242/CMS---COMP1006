@@ -27,6 +27,10 @@ try {
 
     $db = null;
 
+  
+   
+//    echo $image;
+
 } catch (Exception $error) {
     Log::error('Page Edit Error:' . json_encode($error));
 }
@@ -62,11 +66,15 @@ try {
                         <label for="exampleFormControlTextarea1" class="form-label">Page Contents:</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="pageContent" placeholder="This is my page"><?php echo $content;?></textarea>                
                     </div>
+                    <div class="mb-3 mt-3">            
+                       <p><img   id="image-output" width="200" height="170" src="<?php  echo '../../storage/app/images/'.$image ;?>"/></p>         
+                    </div>
+
                     <div class="row g-3">
                         <div class="col">
                             <div class="mb-3">
-                            <label for="formFile" class="form-label" value="<?php echo $image;?>">Page Image</label>
-                            <input class="form-control" type="file" id="formFile" name="pageImg" accept="image/*">
+                            <label for="formFile" class="form-label" >Page Image</label>
+                            <input class="form-control" type="file" id="formFile" name="pageImg" accept="image/*" onchange="loadFile(event)" value="<?php echo $image;?>">
                             </div>
                         </div>
 

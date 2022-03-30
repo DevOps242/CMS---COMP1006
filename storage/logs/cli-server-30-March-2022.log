@@ -15,3 +15,6 @@ TimeStamp: Wednesday 30th of March 2022 01:24:01 PM
 Page Creation Error: "There was and error creating your page.\nSQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens"
 TimeStamp: Wednesday 30th of March 2022 01:24:44 PM
 
+Error adding File: "Sorry, file already exists."
+TimeStamp: Wednesday 30th of March 2022 02:42:51 PM
+

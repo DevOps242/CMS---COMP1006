@@ -59,3 +59,9 @@ function toggleActiveStatus() {
     }
     console.log(checkBoxValue.value);
 }
+
+let loadFile = (event) => {
+    var image = document.getElementById('image-output');
+    image.style.display = "inline-block";
+	image.src = URL.createObjectURL(event.target.files[0]);
+}

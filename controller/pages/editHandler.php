@@ -32,15 +32,12 @@ if ( !empty($_FILES['pageImg']['name']) ){
         $path_filename_ext = $target_dir.$filename.".".$ext;
         
     // Check if file already exists
-    if (file_exists($path_filename_ext)) {
-        $serverMessage = "Sorry, file already exists.";
-        Log::info('Error adding File: ' . json_encode($serverMessage));
-        header('Location: ../../view/admin/page-edit.php?id='.$pageID.'&message=' . $serverMessage);
-        exit;  
-        
-    } else{
-        move_uploaded_file($temp_name,$path_filename_ext);
-    }
+    if (file_exists($path_filename_ext) ) {
+        // Delete the file 
+        unlink($path_filename_ext);
+    } 
+    // Upload the file.
+    move_uploaded_file($temp_name,$path_filename_ext);
 }
 
 try {
