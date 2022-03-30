@@ -44,7 +44,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <!-- Get pages from the database -->
-                            <li><a class="dropdown-item" href="pages.php">Action</a></li>
+                            <li><a class="dropdown-item" href="pages.php">View Pages</a></li>
+                            <li><a class="dropdown-item" href="page-create.php">Create Pages</a></li>
                             <!-- Template above -->
                             
                             <li>
@@ -54,7 +55,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+                        <a class="nav-link" href="#">Logo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/index.php">View Public Pages</a>
                     </li>
                 </ul>
               

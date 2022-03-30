@@ -3,6 +3,10 @@ body{
     color: #222222;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Colors
 #133C55- indigo dye
 #386FA4 - queen blue

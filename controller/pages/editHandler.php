@@ -65,16 +65,17 @@ try {
     }
     $cmd->bindParam(':pageStatus', $pageStatus, PDO::PARAM_STR, 255);
     $cmd->bindParam(':userGUID', $userGUID, PDO::PARAM_STR, 255);
+    $cmd->bindParam(':pageID', $pageID, PDO::PARAM_INT);
     $cmd->execute();
 
     $serverMessage = "Page has been edited successfully";
-    header('Location: ../../view/admin/page-edit.php?message=' . $serverMessage);
+    header('Location: ../../view/admin/page-edit.php?id='.$pageID.'&message=' . $serverMessage);
     exit;    
 
 } catch (Exception $error) {
     $serverMessage = "There was and error creating your page.";
     Log::error('Page Creation Error: ' . json_encode( $serverMessage . PHP_EOL . $error->getMessage()));
-    header('Location: ../../view/admin/page-edit.php?message=' . $serverMessage);
+    header('Location: ../../view/admin/page-edit.php?id='.$pageID.'&message=' . $serverMessage);
     exit;    
 }
        

@@ -14,7 +14,7 @@ $pageImg = null;
 // Validate fields not empty
 if (empty($pageName) || empty($pageTitle) || empty($pageContent)) {
     $serverMessage = "Error, all fields must be filled. {Page Name, Page Title, and Page Content}";
-    header('Location: ../../view/admin/create-pages.php?message=' . $serverMessage);
+    header('Location: ../../view/admin/page-create.php?message=' . $serverMessage);
     exit;  
 } 
 
@@ -32,7 +32,7 @@ if ( !empty($_FILES['pageImg']['name']) ){
     // Check if file already exists
     if (file_exists($path_filename_ext)) {
         $serverMessage = "Sorry, file already exists.";
-        header('Location: ../../view/admin/create-pages.php?message=' . $serverMessage);
+        header('Location: ../../view/admin/page-create.php?message=' . $serverMessage);
         exit;  
         
     } else{
@@ -60,12 +60,12 @@ try {
     $cmd->execute();
 
     $serverMessage = "Page has been created successfully";
-    header('Location: ../../view/admin/create-pages.php?message=' . $serverMessage);
+    header('Location: ../../view/admin/page-create.php?message=' . $serverMessage);
     exit;    
 
 } catch (Exception $error) {
     $serverMessage = "There was and error creating your page.";
     Log::error('Page Creation Error: ' . json_encode( $serverMessage . PHP_EOL . $error->getMessage()));
-    header('Location: ../../view/admin/create-pages.php?message=' . $serverMessage);
+    header('Location: ../../view/admin/page-create.php?message=' . $serverMessage);
     exit;    
 }

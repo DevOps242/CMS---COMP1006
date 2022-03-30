@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = 'Edit Users';
+$pageTitle = 'Edit User';
 require_once 'includes/header.php';
 require_once __DIR__ . '/../../model/Database.php';
 require_once __DIR__ . '/../../utilities/Log.php';
