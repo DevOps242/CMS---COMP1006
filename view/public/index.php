@@ -92,7 +92,7 @@ if (!isset($_GET['id'])) {
                         <!-- Content Section -->
                         <div class="col-7">
                             <div class="container">
-                                <p class="lead">'. $content .'</p>
+                                <p class="lead">'. nl2br($content) .'</p>
                             </div>
                         </div>
                         ';

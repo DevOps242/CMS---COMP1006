@@ -30,10 +30,10 @@ if (!isset($_SESSION['userGUID'])) {
                 <form method="POST" action="<?php dirname(__FILE__)?>../../controller/logos/createHandler.php" enctype="multipart/form-data">
                     <div class="row g-3 mt-3 mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Logo Name" name="logoName" aria-label="Logo Name" required>
+                            <input type="text" class="form-control" placeholder="Logo Name" name="logoName" aria-label="Logo Name">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Logo Title" name="logoTitle" aria-label="Logo Title" required>
+                            <input type="text" class="form-control" placeholder="Logo Title" name="logoTitle" aria-label="Logo Title">
                         </div>
                     </div>
 

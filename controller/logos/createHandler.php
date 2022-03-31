@@ -15,7 +15,7 @@ $userGUID = $_SESSION['userGUID'];
 $logoImg = null;
 
 // Validate fields not empty
-if (empty($logoName) || empty($logoTitle) || empty($_FILES['logoImg']['name']))  {
+if (empty($logoName) && !empty($logoTitle) || empty($logoName) && !empty($_FILES['logoImg']['name'])  || empty($logoTitle) && !empty($_FILES['logoImg']['name'])) {
     $serverMessage = "Error, all fields must be filled. {Logo Name and Logo Title, Logo Image}";
     header('Location: ../../view/admin/logo.php?message=' . $serverMessage);
     exit;  
@@ -45,36 +45,41 @@ if ( !empty($_FILES['logoImg']['name']) ){
 }
 
 try {
-    // Add info to the database.
-    $db = new Database();
- 
-    // Set all Logos to inactive once a new one is added
-    $query = "UPDATE CMSLogos 
-              SET logoStatus = 'inactive'
-              WHERE logoStatus = 'active'";
-
-    $cmd = $db->connect->prepare($query);
-    $cmd->execute();
-    $db = null;
-
-    // Establish new connection to database
-    $db = new Database();
-
-    // query to add logo to database
-    $query = "INSERT INTO CMSLogos (logoName, logoTitle, logoStatus, logoImg) VALUES (:logoName, :logoTitle, :logoStatus, :logoImg)";
-
-    $cmd = $db->connect->prepare($query);
+    if ( empty($logoName) && empty($logoTitle) && empty($_FILES['logoImg']['name'])  ){
+        
+    } else {
+        // Add info to the database.
+        $db = new Database();
     
-    // Bind the param values
-    $cmd->bindParam(':logoName', $logoName, PDO::PARAM_STR, 255);
-    $cmd->bindParam(':logoTitle', $logoTitle, PDO::PARAM_STR, 255);
-    $cmd->bindParam(':logoStatus', $logoStatus, PDO::PARAM_STR, 15);
-    $cmd->bindParam(':logoImg', $logoImg, PDO::PARAM_STR, 255);
-    $cmd->execute();
+        // Set all Logos to inactive once a new one is added
+        $query = "UPDATE CMSLogos 
+                SET logoStatus = 'inactive'
+                WHERE logoStatus = 'active'";
 
-    $serverMessage = "Logo has been changed successfully";
-    header('Location: ../../view/admin/logo.php?message=' . $serverMessage);
-    exit;    
+        $cmd = $db->connect->prepare($query);
+        $cmd->execute();
+        $db = null;
+
+        // Establish new connection to database
+        $db = new Database();
+
+        // query to add logo to database
+        $query = "INSERT INTO CMSLogos (logoName, logoTitle, logoStatus, logoImg) VALUES (:logoName, :logoTitle, :logoStatus, :logoImg)";
+
+        $cmd = $db->connect->prepare($query);
+        
+        // Bind the param values
+        $cmd->bindParam(':logoName', $logoName, PDO::PARAM_STR, 255);
+        $cmd->bindParam(':logoTitle', $logoTitle, PDO::PARAM_STR, 255);
+        $cmd->bindParam(':logoStatus', $logoStatus, PDO::PARAM_STR, 15);
+        $cmd->bindParam(':logoImg', $logoImg, PDO::PARAM_STR, 255);
+        $cmd->execute();
+
+        $serverMessage = "Logo has been changed successfully";
+        header('Location: ../../view/admin/logo.php?message=' . $serverMessage);
+        exit;
+    }
+    
 
 } catch (Exception $error) {
     // Catch the error and redirect to the logo page with error and capture in logs.

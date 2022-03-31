@@ -34,14 +34,14 @@ $pageTitle;
             $db = new Database();
     
             // Retrieve the users from the database.
-            $query = "SELECT * FROM CMSPages";
+            $query = "SELECT * FROM CMSPages 
+                     WHERE pageStatus = 'active'";
             $cmd = $db->connect->prepare($query);
             $cmd->execute();
 
             // Grab the pages from the database
             $results = $cmd->fetchAll();
         
-
             // Query database for the logo.
             $query = "SELECT * FROM CMSLogos WHERE logoStatus = 'active'";
             $cmd = $db->connect->prepare($query);
@@ -49,6 +49,7 @@ $pageTitle;
             $logos = $cmd->fetch();
 
             $db = null;
+            
         }  catch (Exception $error) {
             Log::error("Public Header: ". json_encode("Error loading header content " . $error->getMessage()));
             // Send user to general eror page.

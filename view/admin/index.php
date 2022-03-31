@@ -18,27 +18,26 @@ try{
     // Query to get the count of active and inactive users
     $query = "SELECT COUNT(*) FROM CMSUsers WHERE userStatus = 'active'";
     $cmd = $db->connect->prepare($query);
-    $activeUsers = $cmd->execute();
-    echo $activeUsers;
-    $cmd = null;
-    $db = null;
+    $cmd->execute();
+    $activeUsers = $cmd->fetch();
 
-    // call database class
-    $db = new Database();
-    $query = "SELECT COUNT(*) FROM CMSUsers WHERE userStatus = 'inactive'";
+    $query = "SELECT COUNT(*) 
+              FROM CMSUsers 
+              WHERE userStatus = 'inactive'";
     $cmd = $db->connect->prepare($query);
-    $inactiveUsers = $cmd->execute();
-    echo $inactiveUsers;
-    $cmd = null;
+    $cmd->execute();
+    $inactiveUsers = $cmd->fetch();
 
+    // Query to get the count of active and inactive pages
     $query = "SELECT COUNT(*) FROM CMSPages WHERE pageStatus = 'active'";
     $cmd = $db->connect->prepare($query);
-    $activePages = $cmd->execute();
-    $cmd = null;
-
+    $cmd->execute();
+    $activePages = $cmd->fetch();
+    
     $query = "SELECT COUNT(*) FROM CMSPages WHERE pageStatus = 'inactive'";
     $cmd = $db->connect->prepare($query);
-    $inactivePages = $cmd->execute();
+    $cmd->execute();
+    $inactivePages = $cmd->fetch();
 
     $db = null;
 
@@ -95,10 +94,10 @@ try{
                     <h5>Users Created:</h5>
                     <div class="row">
                         <div class="col-6">
-                            <h6>Active Users: <p><?php echo $activeUsers; ?></p> </h6>
+                            <h6>Active Users: <p><?php echo $activeUsers[0]; ?></p> </h6>
                         </div>
                         <div class="col-6">
-                            <h6>Inactive Users: <p><?php echo $inactiveUsers; ?></p></h6>
+                            <h6>Inactive Users: <p><?php echo $inactiveUsers[0]; ?></p></h6>
                         </div>
                     </div>
                 </div>
@@ -106,10 +105,10 @@ try{
                     <h5>Pages created: </h5>
                     <div class="row">
                         <div class="col-6">
-                            <h6>Active Pages: <p><?php echo $activePages; ?></p> </h6>
+                            <h6>Active Pages: <p><?php echo $activePages[0]; ?></p> </h6>
                         </div>
                         <div class="col-6">
-                            <h6>Inactive Pages: <p><?php echo $inactivePages; ?></p></h6>
+                            <h6>Inactive Pages: <p><?php echo $inactivePages[0]; ?></p></h6>
                         </div>
                     </div>
                 </div>

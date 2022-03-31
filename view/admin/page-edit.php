@@ -76,7 +76,7 @@ try {
                     </div>
                     <div class="mb-3 mt-3">            
                         <label for="exampleFormControlTextarea1" class="form-label">Page Contents:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="pageContent" placeholder="This is my page"><?php echo $content;?></textarea>                
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="pageContent" placeholder="This is my page"><?php echo nl2br($content);?></textarea>                
                     </div>
                     <div class="mb-3 mt-3">            
                        <p><img   id="image-output" width="200" height="170" src="<?php  echo '../../storage/app/images/'.$image ;?>"/></p>         
