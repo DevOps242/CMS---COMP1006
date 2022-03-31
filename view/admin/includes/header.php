@@ -45,13 +45,10 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <!-- Get pages from the database -->
                             <li><a class="dropdown-item" href="pages.php">View Pages</a></li>
-                            <li><a class="dropdown-item" href="page-create.php">Create Pages</a></li>
-                            <!-- Template above -->
-                            
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="page-create.php">Create Pages</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -76,7 +73,13 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="login.php">Login</a>
                             </li>
-                        </ul>';
+                        </ul>
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-flex" style="--bs-scroll-height: 100px;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../public/index.php">View Public Page</a>
+                            </li>
+                        </ul>     
+                        ';
                 }
                 ?>
             </div>

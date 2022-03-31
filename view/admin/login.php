@@ -2,6 +2,12 @@
 $pageTitle = 'Login';
 require 'includes/header.php';
 
+// Send users to the index page if already logged in.
+if (isset($_SESSION['userGUID'])) {
+    header("Location: index.php");
+    exit;
+} 
+
 ?>
 
 <div class="container text-center mb-3 mt-3" > 

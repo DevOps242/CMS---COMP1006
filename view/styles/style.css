@@ -1,0 +1,40 @@
+html, body{
+    height: 100%;
+    background-color: #FBFEF9;
+}
+
+.card {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -200%);
+    box-shadow: 5px 10px #36B9B9;
+}
+.center-card{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px; 
+}
+
+.btn-primary{
+    background-color: #36B9B9;
+    color: #F2F2F0;
+    border-color: #36B9B9;
+}
+
+.btn-primary:hover{
+    background-color: #F2F2F0;
+    color: #36B9B9;
+    border-color: #F2F2F0;
+    box-shadow: 5px 10px #36B9B9;
+}
+
+.btn-primary:focus{
+    background-color: #F2F2F0;
+    color: #36B9B9;
+    border-color: #F2F2F0;
+    box-shadow: 5px 10px #36B9B9;
+}

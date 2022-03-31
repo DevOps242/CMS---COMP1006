@@ -24,3 +24,6 @@ TimeStamp: Wednesday 30th of March 2022 08:33:09 PM
 Public Header: "Error loading header content SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens"
 TimeStamp: Wednesday 30th of March 2022 08:33:11 PM
 
+Login Admin Process:"\nInvalid credentials or email address"
+TimeStamp: Wednesday 30th of March 2022 09:59:07 PM
+

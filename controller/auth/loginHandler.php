@@ -60,10 +60,11 @@ if ( empty($email) || empty($password) ) {                                      
         exit;
         
     } catch(Exception $error) {
-        Log::error('Login Admin Process: ' . json_encode($error->getMessage()) );
         $serverMessage = "Server Error trying to execute your access";
+        Log::error('Login Admin Process: ' . json_encode($error->getMessage()) . PHP_EOL . $serverMessage);
         $db = null;
-        header('Location: ../../view/admin/login.php?message=' . $serverMessage);
+        // Send user to general eror page.
+        header('Location: ../../view/error.php');
         exit;
     }
 }                  

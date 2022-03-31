@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CMS | Public - 404 Error</title>
+        <title>CMS | Public - 500 Error</title>
       
         <!-- Font Awesome Icons CDN -->
         <script src="https://kit.fontawesome.com/d42d4cbe33.js" crossorigin="anonymous"></script>
@@ -18,9 +18,9 @@
     <body>
         <div class="container text-center mt-3 mb-3 center-card">
             <div class="card">
-                <h2><i>404 Error</i></h2>
-                <h4>Ooopss! It seems that you must be lost.</h4>
-                <a href="public/index.php"><button type="button" class="btn btn-primary mb-3"><b>Press me to return <i class="fa-solid fa-house"></i>!</b></button></a>
+                <h2><i>500 Error</i></h2>
+                <h4>Ooopss! It seems that there was a Server Error.</h4>
+                <a href="admin/index.php"><button type="button" class="btn btn-primary mb-3"><b>Press me to return <i class="fa-solid fa-house"></i>!</b></button></a>
             </div>
         </div>
         
