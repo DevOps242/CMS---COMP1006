@@ -18,3 +18,9 @@ TimeStamp: Wednesday 30th of March 2022 01:24:44 PM
 Error adding File: "Sorry, file already exists."
 TimeStamp: Wednesday 30th of March 2022 02:42:51 PM
 
+Public Header: "Error loading header content SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens"
+TimeStamp: Wednesday 30th of March 2022 08:33:09 PM
+
+Public Header: "Error loading header content SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens"
+TimeStamp: Wednesday 30th of March 2022 08:33:11 PM
+
