@@ -42,14 +42,14 @@ if (!isset($_SESSION['userGUID'])) {
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="pageContent" placeholder="This is my page"></textarea>                
                     </div>
                     <div class="mb-3 mt-3">            
-                       <p><img  style="display: none;" id="image-output" width="200" height="170" /></p>         
+                       <p> <img  style="display:none;" id="image-output" width="200" height="170" /> </p>         
                     </div>
 
                     <div class="row g-3">
                         <div class="col">
                             <div class="mb-3">
                             <label for="formFile" class="form-label">Page Image</label>
-                            <input class="form-control" type="file" id="formFile" name="pageImg" accept="image/*" onchange="loadFile(event)">
+                            <input class="form-control" type="file" id="formFile" name="pageImg" accept="image/*" onChange="loadFile(event)">
                             </div>
                         </div>
 

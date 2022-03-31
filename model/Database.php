@@ -19,7 +19,7 @@ class Database {
         } catch (Exception $error) {
             Log::error('Database Error: ' . json_encode($error->getMessage()) );
             // Send user to general eror page.
-            header('Location: ../../view/error.php');
+            header('Location: ../view/error.php');
             exit;
         }
     }
