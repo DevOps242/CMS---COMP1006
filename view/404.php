@@ -13,6 +13,8 @@
 
           <!-- CSS Link -->
           <link rel="stylesheet" type="text/css" href="styles/style.css">
+          <!-- Favicon Icon -->
+          <link rel="icon" type="image/x-icon" href="favicon.ico">
   
     </head>
     <body>

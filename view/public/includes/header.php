@@ -9,7 +9,6 @@ $pageTitle;
         <meta charset="UTF-8">
         <title>CMS | Public - <?php echo $pageTitle?></title>
       
-
         <!-- Font Awesome Icons CDN -->
         <script src="https://kit.fontawesome.com/d42d4cbe33.js" crossorigin="anonymous"></script>
 
@@ -19,6 +18,9 @@ $pageTitle;
 
           <!-- CSS Link -->
           <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+          <!-- Favicon Icon -->
+          <link rel="icon" type="image/x-icon" href="../favicon.ico">
   
     </head>
     <body>
@@ -49,6 +51,8 @@ $pageTitle;
             $db = null;
         }  catch (Exception $error) {
             Log::error("Public Header: ". json_encode("Error loading header content " . $error->getMessage()));
+            // Send user to general eror page.
+            header('Location: ../error.php');
             exit;
         }
     ?>

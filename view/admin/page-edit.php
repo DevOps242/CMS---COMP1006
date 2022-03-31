@@ -43,7 +43,7 @@ try {
 } catch (Exception $error) {
     Log::error('Page Edit Error:' . json_encode($error));
     // Send user to general eror page.
-    header('Location: ../../view/error.php');
+    header('Location: ../error.php');
     exit;
 }
 ?>

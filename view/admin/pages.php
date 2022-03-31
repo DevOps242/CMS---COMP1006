@@ -79,7 +79,7 @@ if (!isset($_SESSION['userGUID'])) {
                     } catch (Exception $error) {
                         Log::error('Admin Users Display Error:' . json_encode($error));
                         // Send user to general eror page.
-                        header('Location: ../../view/error.php');
+                        header('Location: ../error.php');
                         exit;
                     }
                 ?>

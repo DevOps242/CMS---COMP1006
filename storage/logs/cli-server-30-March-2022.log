@@ -27,3 +27,30 @@ TimeStamp: Wednesday 30th of March 2022 08:33:11 PM
 Login Admin Process:"\nInvalid credentials or email address"
 TimeStamp: Wednesday 30th of March 2022 09:59:07 PM
 
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:21 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:28 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:31 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:32 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:33 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:34 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN 'inac' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:12:41 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN '1 EL' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:13:33 PM
+
+Index Page Error:{"errorInfo":["42000",1064,"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS activeUsers,\n              SUM(CASE WHEN userStatus = 'inactive' THEN '1 EL' at line 2"]}
+TimeStamp: Wednesday 30th of March 2022 11:14:09 PM
+
