@@ -4,6 +4,19 @@ require_once 'includes/header.php';
 require_once __DIR__ . '/../../model/Database.php';
 require_once __DIR__ . '/../../utilities/Log.php';
 
+// Check to make sure the user is logged in before accessing this page.
+if (!isset($_SESSION['userGUID'])) {
+    header("Location: login.php");
+    exit;
+} 
+
+// Take user back to view page if no id is set
+if(!isset($_GET['id'])) {
+    $serverMessage = "Please select an item to edit.";
+    header("Location: pages.php?errorMessage=".$serverMessage);
+    exit;
+}
+
 try {
     $pageID = $_GET['id'];
     

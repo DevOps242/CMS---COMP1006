@@ -3,10 +3,11 @@ $pageTitle = 'Welcome';
 require_once('../../utilities/shared.php');
 require_once 'includes/header.php';
 
-
-if ( !isset($_SESSION['createdOn']) ) {
-    header('Location: login.php');
-}
+// Check to make sure the user is logged in before accessing this page.
+if (!isset($_SESSION['userGUID'])) {
+    header("Location: login.php");
+    exit;
+} 
 
 ?>
 

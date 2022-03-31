@@ -4,6 +4,11 @@ require_once 'includes/header.php';
 require_once __DIR__ . '/../../model/Database.php';
 require_once __DIR__ . '/../../utilities/Log.php';
 
+// Check to make sure the user is logged in before accessing this page.
+if (!isset($_SESSION['userGUID'])) {
+    header("Location: login.php");
+    exit;
+} 
 
 try {
     $userGUID = $_GET['id'];

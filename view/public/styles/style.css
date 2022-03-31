@@ -1,0 +1,8 @@
+html, body {
+    height: 100%;
+}
+
+.navbar-light {
+    background-color: #36B9B9;
+    /* color: #F2F2F0; */
+}
