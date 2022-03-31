@@ -80,6 +80,7 @@ try {
     // Catch the error and redirect to the logo page with error and capture in logs.
     $serverMessage = "There was and error changinge your logo.";
     Log::error('Logo Change Error: ' . json_encode( $serverMessage . PHP_EOL . $error->getMessage()));
-    header('Location: ../../view/admin/logo.php?message=' . $serverMessage);
-    exit;    
+    // Send user to general eror page.
+    header('Location: ../../view/error.php');
+    exit;
 }

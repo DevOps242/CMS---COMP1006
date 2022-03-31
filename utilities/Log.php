@@ -34,6 +34,9 @@ class Log {
             
         } catch (Exception $error){
             throw new Exception($error->message);
+            // Send user to general eror page.
+            header('Location: ../../view/error.php');
+            exit;
         }
        
         // takes in the error 
@@ -73,6 +76,9 @@ class Log {
             
         } catch (Exception $error){
             throw new Exception($error->message);
+            // Send user to general eror page.
+            header('Location: ../../view/error.php');
+            exit;
         }
     }
 
@@ -93,6 +99,9 @@ class Log {
             fclose($file);
         } catch (Exception $error) {
             Log::error('Log File failed to create: '. json_encode($error->getMessage()));
+            // Send user to general eror page.
+            header('Location: ../../view/error.php');
+            exit;
         }
         
     }

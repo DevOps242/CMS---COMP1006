@@ -64,14 +64,14 @@ require_once __DIR__ . '/../../utilities/Log.php';
                                     </td>
                                 </tr>';
                         }
+                        $db = null;
                     } catch (Exception $error) {
                         Log::error('Admin Users Display Error:' . json_encode($error));
+                        // Send user to general eror page.
+                        header('Location: ../../view/error.php');
+                        exit;
                     }
- 
-                    $db = null;
-
                 ?>
-                <tr></tr>
             </tbody>
         </table>
     </div>

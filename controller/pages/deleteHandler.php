@@ -22,7 +22,8 @@ try{
 
 } catch (Exception $error) {
     $serverMessage = "There was an error processing your delete request";
-    Log::error('Delete Page Process Error:' . json_encode($error->getMessage()));
-    header('Location: ../../view/admin/pages.php?errorMessage=' .$serverMessage);
+    Log::error('Delete Page Process Error:' . json_encode($serverMessage . PHP_EOL .$error->getMessage()));
+    // Send user to general eror page.
+    header('Location: ../../view/error.php');
     exit;
 }

@@ -40,12 +40,11 @@ try {
 
     $db = null;
 
-  
-   
-//    echo $image;
-
 } catch (Exception $error) {
     Log::error('Page Edit Error:' . json_encode($error));
+    // Send user to general eror page.
+    header('Location: ../../view/error.php');
+    exit;
 }
 ?>
 

@@ -100,6 +100,9 @@ if ($flag === false) {
         exit;
     } catch (Exception $error) {
         Log::error('Registration Error: ' . json_encode($error->getMessage()));
+         // Send user to general eror page.
+         header('Location: ../../view/error.php');
+         exit;
     }
 } else {
     //  Redirect back to the register page with the error.

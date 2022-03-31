@@ -23,8 +23,9 @@ if(isset($_GET['delete'])) {
 
     } catch (Exception $error) {
         $serverMessage = "There was an error processing your delete request";
-        Log::error('Delete User Process Error:' . json_encode($error->getMessage()));
-        header('Location: ../../view/admin/users.php?errorMessage=' .$serverMessage);
+        Log::error('Delete User Process Error:' . json_encode($serverMessage . PHP_EOL . $error->getMessage()));
+        // Send user to general eror page.
+        header('Location: ../../view/error.php');
         exit;
     }
       
@@ -99,8 +100,9 @@ if(isset($_GET['delete'])) {
       
     } catch (Exception $error) {
         $serverMessage = "There was an error processing your edit request";
-        Log::error('Edit User Process Error:' . json_encode($error->getMessage()));
-        header('Location: ../../view/admin/user-edit.php?id='.$userGUID.'&errorMessage=' .$serverMessage);
+        Log::error('Edit User Process Error:' . json_encode($servrMessage . PHP_EOL . $error->getMessage()));
+        // Send user to general eror page.
+        header('Location: ../../view/error.php');
         exit;
     } 
 }

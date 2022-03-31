@@ -66,6 +66,7 @@ try {
 } catch (Exception $error) {
     $serverMessage = "There was and error creating your page.";
     Log::error('Page Creation Error: ' . json_encode( $serverMessage . PHP_EOL . $error->getMessage()));
-    header('Location: ../../view/admin/page-create.php?message=' . $serverMessage);
-    exit;    
+    // Send user to general eror page.
+    header('Location: ../../view/error.php');
+    exit;   
 }

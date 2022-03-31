@@ -38,28 +38,36 @@ if (!isset($_GET['id'])) {
 } else {
     $pageID = $_GET['id'];
 
-    // Connect to the database
-    $db = new Database();
+    try{
+         // Connect to the database
+        $db = new Database();
 
-    // Retrieve the users from the database.
-    $query = "SELECT * FROM CMSPages WHERE pageID = :pageID";
-    $cmd = $db->connect->prepare($query);
-    $cmd->bindParam(':pageID', $pageID, PDO::PARAM_INT);
-    $cmd->execute();
-    $result = $cmd->fetch();
-   
-    // Store the users variables from the database
-    $id         = $result['pageID'];
-    $name       = $result['pageName'];
-    $title      = $result['pageTitle'];
-    $content    = $result['pageContent'];
-    $image      = $result['pageImg'];
+        // Retrieve the users from the database.
+        $query = "SELECT * FROM CMSPages WHERE pageID = :pageID";
+        $cmd = $db->connect->prepare($query);
+        $cmd->bindParam(':pageID', $pageID, PDO::PARAM_INT);
+        $cmd->execute();
+        $result = $cmd->fetch();
+    
+        // Store the users variables from the database
+        $id         = $result['pageID'];
+        $name       = $result['pageName'];
+        $title      = $result['pageTitle'];
+        $content    = $result['pageContent'];
+        $image      = $result['pageImg'];
 
-    $db = null;
+        $db = null;
 
-    $pageTitle = $name;
-    require_once 'includes/header.php';
+        $pageTitle = $name;
+        require_once 'includes/header.php';
 
+    } catch (Exception $error) {
+        Log::error("Public Page Error: " . $error->getMessage());
+        // Send user to general eror page.
+        header('Location: ../../view/error.php');
+        exit;
+    }
+ 
 ?>
 
 <div class="container mt-3 mb-3">

@@ -1,6 +1,10 @@
 <?php 
 require_once __DIR__ . '/../../model/Database.php';
 
+if (!isset($_POST)) {
+   
+}
+
 //Error message veriable to return to user. 
 $serverMessage = null;
 
