@@ -46,7 +46,21 @@ if ( !empty($_FILES['logoImg']['name']) ){
 
 try {
     if ( empty($logoName) && empty($logoTitle) && empty($_FILES['logoImg']['name'])  ){
-        
+        // Add info to the database.
+        $db = new Database();
+    
+        // Set all Logos to inactive once a new one is added
+        $query = "UPDATE CMSLogos 
+                SET logoStatus = 'inactive'";
+
+        $cmd = $db->connect->prepare($query);
+        $cmd->execute();
+        $db = null;
+
+        $serverMessage = "Logo has been changed successfully";
+        header('Location: ../../view/admin/logo.php?message=' . $serverMessage);
+        exit;
+
     } else {
         // Add info to the database.
         $db = new Database();

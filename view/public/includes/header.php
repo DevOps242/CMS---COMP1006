@@ -49,7 +49,7 @@ $pageTitle;
             $logos = $cmd->fetch();
 
             $db = null;
-            
+
         }  catch (Exception $error) {
             Log::error("Public Header: ". json_encode("Error loading header content " . $error->getMessage()));
             // Send user to general eror page.
@@ -68,7 +68,7 @@ $pageTitle;
                         ';
                 } else {
                     echo '
-                        <a class="navbar-brand" href="#">Pixilar CMS | Public Pages</a>
+                        <a class="navbar-brand" href="index.php">Pixilar CMS | Public Pages</a>
                         ';
                 }
             ?>
