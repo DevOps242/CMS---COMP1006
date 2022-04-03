@@ -1,6 +1,6 @@
 <?php 
 $pageTitle = 'Login';
-require 'includes/header.php';
+require_once 'includes/header.php';
 
 // Send users to the index page if already logged in.
 if (isset($_SESSION['userGUID'])) {
@@ -48,6 +48,6 @@ if (isset($_SESSION['userGUID'])) {
 </div>
 
 <?php 
-require 'includes/footer.php';
+require_once 'includes/footer.php';
 
 ?>

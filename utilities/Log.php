@@ -1,5 +1,4 @@
 <?php 
-// require 'shared.php';
 
 class Log {
 
@@ -92,6 +91,8 @@ class Log {
             $file = fopen($fileName, 'x+');
 
             if (!$file) {
+                header('Location: ../../view/error.php');
+                exit;
                 die('Error creating the file ' . $fileName );
             }
             

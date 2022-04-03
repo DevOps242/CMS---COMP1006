@@ -1,6 +1,6 @@
 <?php 
 $pageTitle = 'View Pages' ;
-require 'includes/header.php';
+require_once 'includes/header.php';
 require_once __DIR__ . '/../../model/Database.php';
 require_once __DIR__ . '/../../utilities/Log.php';
 
@@ -89,6 +89,6 @@ if (!isset($_SESSION['userGUID'])) {
     </div>
 
 <?php 
-require 'includes/footer.php';
+require_once 'includes/footer.php';
 
 ?>

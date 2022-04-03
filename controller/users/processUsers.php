@@ -115,6 +115,6 @@ if(isset($_GET['delete'])) {
     
 
 
-require 'includes/footer.php';
+require_once 'includes/footer.php';
 
 ?>

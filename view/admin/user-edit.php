@@ -90,6 +90,6 @@ try {
     </div>
 </div>
 <?php 
-require 'includes/footer.php';
+require_once 'includes/footer.php';
 
 ?>

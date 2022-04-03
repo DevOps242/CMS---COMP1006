@@ -1,6 +1,7 @@
 <?php 
-require_once __DIR__ . '/../../model/Database.php';
 require_once __DIR__ . '/../../utilities/Log.php';
+require_once __DIR__ . '/../../model/Database.php';
+
 
 if (!isset($_GET['id'])) {
     $pageTitle = 'Welcome';
